@@ -17,5 +17,7 @@ namespace EtudePop.Data
         public DbSet<EtudePop.Models.Pays> Pays { get; set; } = default!;
 
         public DbSet<EtudePop.Models.Population>? Population { get; set; }
+
+        public DbSet<EtudePop.Models.Continent>? Continent { get; set; }
     }
 }

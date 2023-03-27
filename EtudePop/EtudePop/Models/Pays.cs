@@ -6,6 +6,6 @@
         public string Name { get; set; }
 
         public ICollection<Population> List_Populations { get; set; }
-        public string Continent { get; set; }
+        public int Id_Continent { get; set; }
     }
 }

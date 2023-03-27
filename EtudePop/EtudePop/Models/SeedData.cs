@@ -24,7 +24,7 @@ namespace EtudePop.Models
                 new Pays
                 {
                     Name = "France",
-                    Continent = "Europe"
+                    Id_Continent = 1
                 }
                 );
                 if (context.Population.Any())
@@ -38,8 +38,54 @@ namespace EtudePop.Models
                     Annee = 2021,
                     id_pays = 1
                 }
+
                 
                 );
+                if (context.Population.Any())
+                {
+                    return; // On ne fait rien
+                }
+                // Sinon on en ajoute un
+                context.Population.AddRange(
+                new Population           {
+                    Nombre= 2000000,
+                    Annee = 2021,
+                    id_pays = 1
+                }
+
+                
+                );
+
+                if (context.Continent.Any())
+                {
+                    return; // On ne fait rien
+                }
+                // Sinon on en ajoute un
+                context.Continent.AddRange(
+                new Continent
+                {
+                    Id = 1,
+                    Name = "Europe",
+                    
+                }
+
+
+                );
+
+                if (context.Continent.Any())
+                { 
+                    return; 
+                }
+                //Sinon on en ajoute un
+                context.Continent.AddRange(
+                new Continent
+                {
+                    Id = 1,
+                    Name = "Europe"
+                });
+
+
+
                 context.SaveChanges();
             }
         }
