@@ -25,7 +25,7 @@ namespace projef_2.Controllers
             _context = context;
         }
 
-
+        
 
         // GET: api/Continents
         [HttpGet]
@@ -38,7 +38,8 @@ namespace projef_2.Controllers
             return await _context.Continent.Include("pays.populations").ToListAsync();
         }
 
-
+        
+        // Accès à un continent spécifique
 
         // GET: api/Continents/5
         [HttpGet("{id}")]
@@ -61,6 +62,8 @@ namespace projef_2.Controllers
 
             return continent;
         }
+
+        // Population du premier continent en 2022
         // GET: api/Continents/1/population/2022
         [HttpGet("{id}/population/{year}")]
         public async Task<ActionResult<String>> GetContinentPopulation(int id, int year)
@@ -140,7 +143,7 @@ namespace projef_2.Controllers
         }
 
 
-
+        //Suppression of continent
         // DELETE: api/Continents/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContinent(int id)
