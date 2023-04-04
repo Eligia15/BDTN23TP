@@ -5,7 +5,7 @@
         
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Pays> pays { get; set; }
+        public ICollection<Pays> pays { get; set; } //liste des pays dans un continent
     }
 }
 
